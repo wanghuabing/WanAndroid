@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#008577</color>
+    <color name="colorPrimaryDark">#00574B</color>
+    <color name="colorAccent">#D81B60</color>
+    <!-- 背景颜色 -->
+    <color name="bg_FBFBFB">#FBFBFB</color>
+    <color name="bg_41CFBB">#41CFBB</color>
+    <color name="bg_EDB818">#EDB818</color>
+    <color name="bg_F4F4F4">#f4f4f4</color>
+    <color name="bg_F9F9F9">#f9f9f9</color>
+    <color name="bg_EAEAEA">#eaeaea</color>
+    <color name="bg_6A6A6A">#6A6A6A</color>
+    <color name="bg_FCF7E6">#FCF7E6</color>
+    <color name="bg_BBBBBB">#BBBBBB</color>
+    <color name="bg_F2F5F5">#F2F5F5</color>
+    <color name="bg_E3F5F2">#E3F5F2</color>
+
+    <!--App 字体颜色 -->
+    <color name="txt_434343">#434343</color>
+    <color name="txt_909090">#909090</color>
+    <color name="txt_363636">#363636</color>
+    <color name="txt_41CFBB">#41CFBB</color>
+    <color name="txt_A8A8A8">#A8A8A8</color>
+    <color name="txt_A5EBE1">#A5EBE1</color>
+    <color name="txt_888888">#888888</color>
+    <color name="txt_FF7B8B">#FF7B8B</color>
+    <color name="txt_90B8B2">#90b8b2</color>
+    <color name="txt_858585">#858585</color>
+    <color name="txt_828282">#828282</color>
+    <color name="txt_EDB818">#edb818</color>
+    <color name="txt_4A4A4A">#4A4A4A</color>
+    <color name="txt_FF8282">#FF8282</color>
+    <color name="txt_CCCCCC">#cccccc</color>
+    <color name="txt_474747">#474747</color>
+    <color name="txt_FA5454">#FA5454</color>
+    <color name="txt_9C897C">#9C897C</color>
+    <color name="txt_C1AB9D">#C1AB9D</color>
+    <color name="txt_A0A0A0">#A0A0A0</color>
+    <color name="txt_525151">#525151</color>
+    <color name="txt_3A3A3A">#3A3A3A</color>
+    <color name="txt_FF6054">#ff6054</color>
+    <color name="txt_76FFF4">#76FFF4</color>
+    <color name="txt_F4CD0C">#F4CD0C</color>
+    <color name="txt_E89915">#E89915</color>
+    <color name="txt_585858">#585858</color>
+
+    <!-- 分隔线 -->
+    <color name="divide_D9D9D9">#D9D9D9</color>
+    <color name="divide_7ADDD0">#7ADDD0</color>
+    <color name="divide_CAD8DF">#CAD8DF</color>
+    <color name="divide_DCDCDC">#DCDCDC</color>
+    <color name="divide_EEEEEE">#EEEEEE</color>
+    <color name="divide_41CFBB">#41CFBB</color>
+    <color name="divide_B1D9D3">#B1D9D3</color>
+    <color name="divide_242424">#242424</color>
+    <color name="divide_BEBEBE">#BEBEBE</color>
+
+    <!-- 描边 -->
+    <color name="stroke_D9D9D9">#D9D9D9</color>
+
+
+    <color name="buttonLabel">#d3d3d3</color>
+</resources>

@@ -1,0 +1,17 @@
+<resources>
+    <string name="app_name">WanAndroid</string>
+
+    <!-- MainActivity -->
+    <string name="tabbar_home">首页</string>
+    <string name="tabbar_teach">教学</string>
+    <string name="tabbar_stu">学习</string>
+    <string name="tabbar_manage">管理</string>
+    <string name="tabbar_me">我的</string>
+
+    <string name="retry">Retry</string>
+    <string name="unknown_error">Unknown Error</string>
+
+    <string name="hint_word">Word...</string>
+    <string name="button_save">Save</string>
+    <string name="empty_not_saved">Word not saved because it is empty.</string>
+</resources>

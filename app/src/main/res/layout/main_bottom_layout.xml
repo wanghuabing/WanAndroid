@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/llBottom"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_alignParentBottom="true"
+    android:layout_gravity="bottom"
+    android:orientation="horizontal"
+    android:paddingTop="@dimen/dimen_7dp"
+    android:paddingBottom="@dimen/dimen_3dp">
+
+    <FrameLayout
+        android:id="@+id/fl_home"
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:layout_weight="1">
+
+        <TextView
+            android:id="@+id/tv_home"
+            style="@style/main_bottom_tab_style"
+            android:onClick="onClick"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:drawableTop="@drawable/tabbar_home_selector"
+            android:text="@string/tabbar_home" />
+
+        <TextView
+            android:id="@+id/tv_unmark_count"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="top|center_horizontal"
+            android:layout_marginLeft="@dimen/dimen_13dp"
+            android:background="@drawable/msg_number_bg_shape"
+            android:contentDescription="@null"
+            android:gravity="center"
+            android:minWidth="@dimen/dimen_15dp"
+            android:minHeight="@dimen/dimen_15dp"
+            android:text="9"
+            android:textColor="@android:color/white"
+            android:textSize="@dimen/size_10"
+            android:textStyle="bold"
+            android:visibility="visible" />
+    </FrameLayout>
+    <TextView
+        android:id="@+id/tv_article"
+        android:onClick="onClick"
+        style="@style/main_bottom_tab_style"
+        android:drawableTop="@drawable/tabbar_teach_selector"
+        android:text="@string/tabbar_teach" />
+
+    <TextView
+        android:id="@+id/tv_project"
+        android:onClick="onClick"
+        style="@style/main_bottom_tab_style"
+        android:drawableTop="@drawable/tabbar_setting_selector"
+        android:text="@string/tabbar_manage" />
+
+    <TextView
+        android:id="@+id/tv_my"
+        android:onClick="onClick"
+        style="@style/main_bottom_tab_style"
+        android:drawableTop="@drawable/tabbar_person_selector"
+        android:text="@string/tabbar_me" />
+
+</LinearLayout>
