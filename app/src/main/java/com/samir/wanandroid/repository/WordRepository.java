@@ -1,11 +1,11 @@
-package com.samir.wanandroid.db.repository;
+package com.samir.wanandroid.repository;
 
 import android.arch.lifecycle.LiveData;
 
 import com.samir.wanandroid.AppExecutors;
 import com.samir.wanandroid.db.dao.WordDao;
-import com.samir.wanandroid.db.entity.Word;
-import com.samir.wanandroid.net.Service.WebService;
+import com.samir.wanandroid.entity.Word;
+import com.samir.wanandroid.net.WebService;
 
 import java.util.List;
 

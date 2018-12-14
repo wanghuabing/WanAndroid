@@ -1,22 +1,18 @@
-package com.samir.wanandroid.net.Service;
+package com.samir.wanandroid.net;
 
 import android.arch.lifecycle.LiveData;
 
-import com.samir.wanandroid.db.entity.User;
-import com.samir.wanandroid.entity.BaseResponse;
-import com.samir.wanandroid.entity.ProjectClassifyData;
-import com.samir.wanandroid.entity.ProjectListData;
-import com.samir.wanandroid.entity.hierarchy.KnowledgeHierarchyData;
-import com.samir.wanandroid.entity.main.banner.BannerData;
-import com.samir.wanandroid.entity.main.collect.FeedArticleListData;
-import com.samir.wanandroid.entity.main.login.LoginData;
-import com.samir.wanandroid.entity.main.search.TopSearchData;
-import com.samir.wanandroid.entity.main.search.UsefulSiteData;
-import com.samir.wanandroid.entity.navigation.NavigationListData;
-import com.samir.wanandroid.net.entity.ApiResponse;
-import com.samir.wanandroid.net.entity.BaseListData;
-import com.samir.wanandroid.net.entity.BaseResult;
-import com.samir.wanandroid.ui.home.entity.Article;
+import com.samir.wanandroid.entity.Article;
+import com.samir.wanandroid.entity.ProjectType;
+import com.samir.wanandroid.entity.common.ApiResponse;
+import com.samir.wanandroid.entity.common.DataHeader;
+import com.samir.wanandroid.entity.common.ListDataHeader;
+import com.samir.wanandroid.entity.ArticleTree;
+import com.samir.wanandroid.entity.AdData;
+import com.samir.wanandroid.entity.User;
+import com.samir.wanandroid.entity.HotKeyWord;
+import com.samir.wanandroid.entity.Website;
+import com.samir.wanandroid.entity.TitleArticleList;
 
 import java.util.List;
 
@@ -44,7 +40,7 @@ public interface WebService {
      * @return feed文章列表数据
      */
     @GET("article/list/{num}/json")
-    LiveData<ApiResponse<BaseResult<BaseListData<Article>>>> loadArticles(@Path("num") int num);
+    LiveData<ApiResponse<DataHeader<ListDataHeader<Article>>>> loadArticles(@Path("num") int num);
 
     /**
      * 搜索
@@ -55,7 +51,7 @@ public interface WebService {
      */
     @POST("article/query/{page}/json")
     @FormUrlEncoded
-    LiveData<BaseResponse<FeedArticleListData>> getSearchList(@Path("page") int page, @Field("k") String k);
+    LiveData<ApiResponse<DataHeader<ListDataHeader<Article>>>> getSearchList(@Path("page") int page, @Field("k") String k);
 
     /**
      * 热搜
@@ -65,7 +61,7 @@ public interface WebService {
      */
     @GET("hotkey/json")
     @Headers("Cache-Control: public, max-age=36000")
-    LiveData<BaseResponse<List<TopSearchData>>> getTopSearchData();
+    LiveData<DataHeader<List<HotKeyWord>>> getTopSearchData();
 
     /**
      * 常用网站
@@ -74,7 +70,7 @@ public interface WebService {
      * @return 常用网站数据
      */
     @GET("friend/json")
-    LiveData<BaseResponse<List<UsefulSiteData>>> getUsefulSites();
+    LiveData<DataHeader<List<Website>>> getUsefulSites();
 
     /**
      * 广告栏
@@ -83,7 +79,7 @@ public interface WebService {
      * @return 广告栏数据
      */
     @GET("banner/json")
-    LiveData<BaseResponse<List<BannerData>>> getBannerData();
+    LiveData<DataHeader<List<AdData>>> getBannerData();
 
     /**
      * 知识体系
@@ -92,7 +88,7 @@ public interface WebService {
      * @return 知识体系数据
      */
     @GET("tree/json")
-    LiveData<BaseResponse<List<KnowledgeHierarchyData>>> getKnowledgeHierarchyData();
+    LiveData<DataHeader<List<ArticleTree>>> getKnowledgeHierarchyData();
 
     /**
      * 知识体系下的文章
@@ -103,7 +99,7 @@ public interface WebService {
      * @return 知识体系feed文章数据
      */
     @GET("article/list/{page}/json")
-    LiveData<BaseResponse<FeedArticleListData>> getKnowledgeHierarchyDetailData(@Path("page") int page, @Query("cid") int cid);
+    LiveData<ApiResponse<DataHeader<ListDataHeader<Article>>>> getKnowledgeHierarchyDetailData(@Path("page") int page, @Query("cid") int cid);
 
     /**
      * 导航
@@ -112,7 +108,7 @@ public interface WebService {
      * @return 导航数据
      */
     @GET("navi/json")
-    LiveData<BaseResponse<List<NavigationListData>>> getNavigationListData();
+    LiveData<DataHeader<List<TitleArticleList>>> getNavigationListData();
 
     /**
      * 项目分类
@@ -121,7 +117,7 @@ public interface WebService {
      * @return 项目分类数据
      */
     @GET("project/tree/json")
-    LiveData<BaseResponse<List<ProjectClassifyData>>> getProjectClassifyData();
+    LiveData<DataHeader<List<ProjectType>>> getProjectClassifyData();
 
     /**
      * 项目类别数据
@@ -132,7 +128,8 @@ public interface WebService {
      * @return 项目类别数据
      */
     @GET("project/list/{page}/json")
-    LiveData<BaseResponse<ProjectListData>> getProjectListData(@Path("page") int page, @Query("cid") int cid);
+    LiveData<ApiResponse<DataHeader<ListDataHeader<Article>>>> getProjectListData(
+            @Path("page") int page, @Query("cid") int cid);
 
     /**
      * 登陆
@@ -144,7 +141,7 @@ public interface WebService {
      */
     @POST("user/login")
     @FormUrlEncoded
-    LiveData<BaseResponse<LoginData>> getLoginData(@Field("username") String username, @Field("password") String password);
+    LiveData<DataHeader<User>> getLoginData(@Field("username") String username, @Field("password") String password);
 
     /**
      * 注册
@@ -157,7 +154,7 @@ public interface WebService {
      */
     @POST("user/register")
     @FormUrlEncoded
-    LiveData<BaseResponse<LoginData>> getRegisterData(@Field("username") String username, @Field("password") String password, @Field("repassword") String repassword);
+    LiveData<DataHeader<User>> getRegisterData(@Field("username") String username, @Field("password") String password, @Field("repassword") String repassword);
 
     /**
      * 收藏站内文章
@@ -167,7 +164,7 @@ public interface WebService {
      * @return 收藏站内文章数据
      */
     @POST("lg/collect/{id}/json")
-    LiveData<BaseResponse<FeedArticleListData>> addCollectArticle(@Path("id") int id);
+    LiveData<ApiResponse<DataHeader<ListDataHeader<Article>>>> addCollectArticle(@Path("id") int id);
 
     /**
      * 收藏站外文章
@@ -180,7 +177,9 @@ public interface WebService {
      */
     @POST("lg/collect/add/json")
     @FormUrlEncoded
-    LiveData<BaseResponse<FeedArticleListData>> addCollectOutsideArticle(@Field("title") String  title, @Field("author") String author, @Field("link") String link);
+    LiveData<ApiResponse<DataHeader<ListDataHeader<Article>>>> addCollectOutsideArticle(
+               @Field("title") String  title, @Field("author") String author,
+               @Field("link") String link);
 
 
     /**
@@ -191,7 +190,7 @@ public interface WebService {
      * @return 收藏列表数据
      */
     @GET("lg/collect/list/{page}/json")
-    LiveData<BaseResponse<FeedArticleListData>> getCollectList(@Path("page") int page);
+    LiveData<ApiResponse<DataHeader<ListDataHeader<Article>>>> getCollectList(@Path("page") int page);
 
     /**
      * 取消站内文章
@@ -203,7 +202,8 @@ public interface WebService {
      */
     @POST("lg/uncollect/{id}/json")
     @FormUrlEncoded
-    LiveData<BaseResponse<FeedArticleListData>> cancelCollectPageArticle(@Path("id") int id, @Field("originId") int originId);
+    LiveData<ApiResponse<DataHeader<ListDataHeader<Article>>>> cancelCollectPageArticle(@Path("id") int id,
+                                                                       @Field("originId") int originId);
 
     /**
      * 取消收藏页面站内文章
@@ -215,6 +215,6 @@ public interface WebService {
      */
     @POST("lg/uncollect_originId/{id}/json")
     @FormUrlEncoded
-    LiveData<BaseResponse<FeedArticleListData>> cancelCollectArticle(@Path("id") int id, @Field("originId") int originId);
+    LiveData<ApiResponse<DataHeader<ListDataHeader<Article>>>> cancelCollectArticle(@Path("id") int id, @Field("originId") int originId);
 
 }

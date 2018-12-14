@@ -1,4 +1,11 @@
-package com.samir.wanandroid.entity.main.login;
+package com.samir.wanandroid.entity;
+
+import android.arch.persistence.room.Entity;
+import android.arch.persistence.room.PrimaryKey;
+import android.arch.persistence.room.TypeConverters;
+import android.support.annotation.NonNull;
+
+import com.samir.wanandroid.db.utils.ListTypeConverters;
 
 import java.util.List;
 
@@ -6,9 +13,12 @@ import java.util.List;
  * @author quchao
  * @date 2018/2/26
  */
+@Entity(tableName = "user_table")
+@TypeConverters(ListTypeConverters.class)
+public class User {
 
-public class LoginData {
-
+    @PrimaryKey
+    @NonNull
     private String username;
     private String password;
     private String icon;

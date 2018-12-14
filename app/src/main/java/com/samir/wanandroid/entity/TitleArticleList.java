@@ -1,16 +1,13 @@
-package com.samir.wanandroid.entity.navigation;
+package com.samir.wanandroid.entity;
 
-import com.samir.wanandroid.entity.main.collect.FeedArticleData;
 
 import java.io.Serializable;
 import java.util.List;
 
 /**
- * @author quchao
- * @date 2018/2/24
+ * 文章分类列表
  */
-
-public class NavigationListData implements Serializable {
+public class TitleArticleList implements Serializable {
 
     /**
      * "articles": [],
@@ -18,15 +15,15 @@ public class NavigationListData implements Serializable {
      * "name": "常用网站"
      */
 
-    private List<FeedArticleData> articles;
+    private List<Article> articles;
     private int cid;
     private String name;
 
-    public List<FeedArticleData> getArticles() {
+    public List<Article> getArticles() {
         return articles;
     }
 
-    public void setArticles(List<FeedArticleData> articles) {
+    public void setArticles(List<Article> articles) {
         this.articles = articles;
     }
 

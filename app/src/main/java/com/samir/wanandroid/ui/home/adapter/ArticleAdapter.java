@@ -9,7 +9,7 @@ import com.samir.framework.base.BaseAdapter;
 import com.samir.wanandroid.R;
 import com.samir.wanandroid.binding.DefaultBindingComponent;
 import com.samir.wanandroid.databinding.ArticleListItemBinding;
-import com.samir.wanandroid.ui.home.entity.Article;
+import com.samir.wanandroid.entity.Article;
 
 /**
  * @Description:
@@ -37,20 +37,19 @@ public class ArticleAdapter extends BaseAdapter<Article,ArticleListItemBinding> 
 
     @Override
     protected void bind(ArticleListItemBinding binding, Article item) {
-
+        binding.setArticle(item);
     }
 
     @Override
     protected boolean areItemsTheSame(Article oldItem, Article newItem) {
-        return false;
+        return oldItem.getId() == newItem.getId();
     }
 
     @Override
     protected boolean areContentsTheSame(Article oldItem, Article newItem) {
-        return false;
+        return oldItem.getId() == newItem.getId()
+                && oldItem.getTitle().equals(newItem.getTitle());
     }
-
-
 
 
 }

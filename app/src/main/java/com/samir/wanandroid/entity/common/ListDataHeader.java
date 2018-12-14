@@ -1,11 +1,11 @@
-package com.samir.wanandroid.net.entity;
+package com.samir.wanandroid.entity.common;
 
 import java.util.List;
 
 /**
  * @Description:
  */
-public class BaseListData<T> {
+public class ListDataHeader<T> {
     private int curPage;
     private int offset;
     private boolean over;

@@ -22,8 +22,7 @@ import android.arch.persistence.room.Insert;
 import android.arch.persistence.room.OnConflictStrategy;
 import android.arch.persistence.room.Query;
 
-import com.samir.wanandroid.db.entity.User;
-
+import com.samir.wanandroid.entity.User;
 
 
 /**
@@ -34,6 +33,6 @@ public interface UserDao {
     @Insert(onConflict = OnConflictStrategy.REPLACE)
     void insert(User user);
 
-    @Query("SELECT * FROM user WHERE login = :login")
-    LiveData<User> findByLogin(String login);
+    @Query("SELECT * FROM USER_TABLE WHERE username = :username")
+    LiveData<User> queryUser(String username);
 }

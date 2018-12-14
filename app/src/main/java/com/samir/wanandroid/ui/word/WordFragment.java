@@ -18,7 +18,7 @@ import android.view.ViewGroup;
 import android.widget.Toast;
 
 import com.samir.wanandroid.R;
-import com.samir.wanandroid.db.entity.Word;
+import com.samir.wanandroid.entity.Word;
 import com.samir.wanandroid.di.Injectable;
 import com.samir.wanandroid.ui.word.adapter.WordListAdapter;
 

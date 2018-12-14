@@ -2,7 +2,6 @@ package com.samir.wanandroid.ui.article;
 
 
 import android.app.Activity;
-import android.arch.lifecycle.Observer;
 import android.arch.lifecycle.ViewModelProvider;
 import android.arch.lifecycle.ViewModelProviders;
 import android.content.Intent;
@@ -17,13 +16,11 @@ import android.widget.Toast;
 import com.samir.framework.base.BaseFragment;
 import com.samir.wanandroid.R;
 import com.samir.wanandroid.databinding.MainFragmentBinding;
-import com.samir.wanandroid.db.entity.Word;
+import com.samir.wanandroid.entity.Word;
 import com.samir.wanandroid.di.Injectable;
 import com.samir.wanandroid.net.RetryCallback;
 import com.samir.wanandroid.ui.word.NewWordActivity;
 import com.samir.wanandroid.ui.word.adapter.WordListAdapter;
-
-import java.util.List;
 
 import javax.inject.Inject;
 

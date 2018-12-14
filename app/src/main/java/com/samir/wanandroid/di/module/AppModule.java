@@ -21,7 +21,6 @@ import android.arch.persistence.room.Room;
 
 import com.samir.wanandroid.db.WanDb;
 import com.samir.wanandroid.db.dao.ArticleDao;
-import com.samir.wanandroid.db.dao.RepoDao;
 import com.samir.wanandroid.db.dao.UserDao;
 import com.samir.wanandroid.db.dao.WordDao;
 
@@ -36,8 +35,8 @@ public class AppModule {
     @Singleton
     @Provides
     WanDb provideDb(Application app) {
-        return Room.databaseBuilder(app, WanDb.class,"wanDb.db")
-//                .addCallback(callback)
+        return Room.databaseBuilder(app,
+                WanDb.class,"wanDb.db")
                 .build();
     }
 
@@ -58,8 +57,4 @@ public class AppModule {
         return db.userDao();
     }
 
-    @Singleton @Provides
-    RepoDao provideRepoDao(WanDb db) {
-        return db.repoDao();
-    }
 }

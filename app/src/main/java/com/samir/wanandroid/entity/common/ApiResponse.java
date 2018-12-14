@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package com.samir.wanandroid.net.entity;
+package com.samir.wanandroid.entity.common;
 
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;

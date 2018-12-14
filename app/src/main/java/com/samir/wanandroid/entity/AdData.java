@@ -1,11 +1,9 @@
-package com.samir.wanandroid.entity.main.banner;
+package com.samir.wanandroid.entity;
 
 /**
- * @author quchao
- * @date 2018/3/2
+ *  首页顶部插图广告
  */
-
-public class BannerData {
+public class AdData {
 
     private int id;
     private String url;

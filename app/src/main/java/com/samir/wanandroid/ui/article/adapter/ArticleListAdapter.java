@@ -8,7 +8,7 @@ import android.view.ViewGroup;
 import android.widget.TextView;
 
 import com.samir.wanandroid.R;
-import com.samir.wanandroid.db.entity.Word;
+import com.samir.wanandroid.entity.Word;
 
 import java.util.List;
 

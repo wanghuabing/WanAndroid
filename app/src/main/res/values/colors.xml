@@ -4,6 +4,7 @@
     <color name="colorPrimaryDark">#00574B</color>
     <color name="colorAccent">#D81B60</color>
     <!-- 背景颜色 -->
+    <color name="bg_F8F8F8">#f8f8f8</color>
     <color name="bg_FBFBFB">#FBFBFB</color>
     <color name="bg_41CFBB">#41CFBB</color>
     <color name="bg_EDB818">#EDB818</color>
@@ -16,7 +17,10 @@
     <color name="bg_F2F5F5">#F2F5F5</color>
     <color name="bg_E3F5F2">#E3F5F2</color>
 
+
     <!--App 字体颜色 -->
+    <color name="txt_333333">#333333</color>
+    <color name="txt_222222">#222222</color>
     <color name="txt_434343">#434343</color>
     <color name="txt_909090">#909090</color>
     <color name="txt_363636">#363636</color>

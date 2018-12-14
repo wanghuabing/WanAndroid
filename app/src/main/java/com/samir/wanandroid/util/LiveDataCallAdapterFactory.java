@@ -19,7 +19,7 @@ package com.samir.wanandroid.util;
 import android.arch.lifecycle.LiveData;
 import android.util.Log;
 
-import com.samir.wanandroid.net.entity.ApiResponse;
+import com.samir.wanandroid.entity.common.ApiResponse;
 
 import java.lang.annotation.Annotation;
 import java.lang.reflect.ParameterizedType;

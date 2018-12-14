@@ -6,7 +6,7 @@ import android.arch.persistence.room.Delete;
 import android.arch.persistence.room.Insert;
 import android.arch.persistence.room.Query;
 
-import com.samir.wanandroid.db.entity.Word;
+import com.samir.wanandroid.entity.Word;
 
 import java.util.List;
 

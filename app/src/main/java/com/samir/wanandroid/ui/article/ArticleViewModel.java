@@ -3,8 +3,8 @@ package com.samir.wanandroid.ui.article;
 import android.arch.lifecycle.LiveData;
 import android.arch.lifecycle.ViewModel;
 
-import com.samir.wanandroid.db.entity.Word;
-import com.samir.wanandroid.db.repository.WordRepository;
+import com.samir.wanandroid.entity.Word;
+import com.samir.wanandroid.repository.WordRepository;
 
 import java.util.List;
 

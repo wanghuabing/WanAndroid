@@ -3,7 +3,7 @@ package com.samir.wanandroid.db;
 import android.os.AsyncTask;
 
 import com.samir.wanandroid.db.dao.WordDao;
-import com.samir.wanandroid.db.entity.Word;
+import com.samir.wanandroid.entity.Word;
 
 import javax.inject.Inject;
 

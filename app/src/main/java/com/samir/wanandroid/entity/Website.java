@@ -1,11 +1,9 @@
-package com.samir.wanandroid.entity.main.search;
+package com.samir.wanandroid.entity;
 
 /**
- * @author quchao
- * @date 2018/2/23
+ * 常用网站数据
  */
-
-public class UsefulSiteData {
+public class Website {
 
     private int id;
     private String name;

@@ -14,25 +14,16 @@
  * limitations under the License.
  */
 
-package com.samir.wanandroid.db.utils;
+package com.samir.wanandroid.entity.common;
 
-import android.arch.persistence.room.TypeConverter;
-import android.arch.persistence.room.util.StringUtil;
-
-import java.util.Collections;
-import java.util.List;
-
-public class GithubTypeConverters {
-    @TypeConverter
-    public static List<Integer> stringToIntList(String data) {
-        if (data == null) {
-            return Collections.emptyList();
-        }
-        return StringUtil.splitToIntList(data);
-    }
-
-    @TypeConverter
-    public static String intListToString(List<Integer> ints) {
-        return StringUtil.joinIntoString(ints);
-    }
+/**
+ * Status of a resource that is provided to the UI.
+ * <p>
+ * These are usually created by the Repository classes where they return
+ * {@code LiveData<Resource<T>>} to pass back the latest data to the UI with its fetch status.
+ */
+public enum Status {
+    SUCCESS,
+    ERROR,
+    LOADING
 }

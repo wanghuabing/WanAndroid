@@ -24,8 +24,8 @@ import android.support.annotation.Nullable;
 import android.support.annotation.WorkerThread;
 
 import com.samir.wanandroid.AppExecutors;
-import com.samir.wanandroid.net.entity.ApiResponse;
-import com.samir.wanandroid.net.entity.Resource;
+import com.samir.wanandroid.entity.common.ApiResponse;
+import com.samir.wanandroid.entity.common.Resource;
 
 
 /**

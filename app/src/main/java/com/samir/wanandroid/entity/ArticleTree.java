@@ -1,14 +1,13 @@
-package com.samir.wanandroid.entity.hierarchy;
+package com.samir.wanandroid.entity;
 
 import java.io.Serializable;
 import java.util.List;
 
 /**
- * @author quchao
- * @date 2018/2/23
+ * 体系树
  */
 
-public class KnowledgeHierarchyData implements Serializable {
+public class ArticleTree implements Serializable {
 
     /**
      *  "children": [],
@@ -20,7 +19,7 @@ public class KnowledgeHierarchyData implements Serializable {
      "visible": 1
      */
 
-    private List<KnowledgeHierarchyData> children;
+    private List<ArticleTree> children;
     private int courseId;
     private int id;
     private String name;
@@ -28,11 +27,11 @@ public class KnowledgeHierarchyData implements Serializable {
     private int parentChapterId;
     private int visible;
 
-    public List<KnowledgeHierarchyData> getChildren() {
+    public List<ArticleTree> getChildren() {
         return children;
     }
 
-    public void setChildren(List<KnowledgeHierarchyData> children) {
+    public void setChildren(List<ArticleTree> children) {
         this.children = children;
     }
 

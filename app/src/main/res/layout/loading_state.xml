@@ -19,13 +19,13 @@
 
     <data>
 
-        <import type="com.samir.wanandroid.net.entity.Resource" />
+        <import type="com.samir.wanandroid.entity.common.Resource" />
 
-        <import type="com.samir.wanandroid.net.entity.Status" />
+        <import type="com.samir.wanandroid.entity.common.Status" />
 
         <variable
             name="resource"
-            type="Resource" />
+            type="com.samir.wanandroid.entity.common.Resource" />
 
         <variable
             name="callback"

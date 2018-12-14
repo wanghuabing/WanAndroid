@@ -7,7 +7,7 @@ import com.samir.wanandroid.di.module.ApiServiceModule;
 import com.samir.wanandroid.di.module.AppModule;
 import com.samir.wanandroid.di.module.MainActivityModule;
 import com.samir.wanandroid.di.module.MainModule;
-import com.samir.wanandroid.net.Service.WebService;
+import com.samir.wanandroid.net.WebService;
 
 import javax.inject.Singleton;
 

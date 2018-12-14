@@ -6,10 +6,10 @@ import android.support.annotation.Nullable;
 
 import com.samir.wanandroid.AppExecutors;
 import com.samir.wanandroid.db.dao.UserDao;
-import com.samir.wanandroid.db.entity.User;
-import com.samir.wanandroid.net.Service.WebService;
-import com.samir.wanandroid.net.entity.ApiResponse;
-import com.samir.wanandroid.net.entity.Resource;
+import com.samir.wanandroid.entity.User;
+import com.samir.wanandroid.entity.common.ApiResponse;
+import com.samir.wanandroid.entity.common.Resource;
+import com.samir.wanandroid.net.WebService;
 
 import javax.inject.Inject;
 
@@ -31,7 +31,7 @@ public class UserRepository {
         this.webService = webService;
     }
 
-    public LiveData<Resource<User>> loadUser(final String login) {
+    public LiveData<Resource<User>> loadUser(final String userName) {
         return new NetworkBoundResource<User,User>(appExecutors) {
             @Override
             protected void saveCallResult(@NonNull User item) {
@@ -46,13 +46,13 @@ public class UserRepository {
             @NonNull
             @Override
             protected LiveData<User> loadFromDb() {
-                return userDao.findByLogin(login);
+                return userDao.queryUser(userName);
             }
 
             @NonNull
             @Override
             protected LiveData<ApiResponse<User>> createCall() {
-                return webService.getUser(login);
+                return webService.getUser(userName);
             }
         }.asLiveData();
     }

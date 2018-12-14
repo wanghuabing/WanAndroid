@@ -1,4 +1,4 @@
-package com.samir.wanandroid.ui.home.entity;
+package com.samir.wanandroid.entity;
 
 import android.arch.persistence.room.ColumnInfo;
 import android.arch.persistence.room.Entity;
@@ -8,8 +8,7 @@ import android.os.Parcelable;
 import android.support.annotation.NonNull;
 
 /**
- * @author quchao
- * @date 2018/2/12
+ * 文章
  */
 @Entity(tableName = "article_table")
 public class Article implements Parcelable {

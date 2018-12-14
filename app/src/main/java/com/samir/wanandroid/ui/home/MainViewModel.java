@@ -3,8 +3,8 @@ package com.samir.wanandroid.ui.home;
 import android.arch.lifecycle.LiveData;
 import android.arch.lifecycle.ViewModel;
 
-import com.samir.wanandroid.net.entity.Resource;
-import com.samir.wanandroid.ui.home.entity.Article;
+import com.samir.wanandroid.entity.common.Resource;
+import com.samir.wanandroid.entity.Article;
 
 import java.util.List;
 

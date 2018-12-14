@@ -7,7 +7,7 @@ import android.arch.persistence.room.Insert;
 import android.arch.persistence.room.OnConflictStrategy;
 import android.arch.persistence.room.Query;
 
-import com.samir.wanandroid.ui.home.entity.Article;
+import com.samir.wanandroid.entity.Article;
 
 import java.util.List;
 

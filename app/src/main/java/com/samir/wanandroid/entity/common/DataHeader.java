@@ -1,13 +1,12 @@
-package com.samir.wanandroid.entity;
+package com.samir.wanandroid.entity.common;
 
 /**
- * @author quchao
- * @date 2018/2/12
+ * @Description:
  */
-public class BaseResponse<T> {
-
+public class DataHeader<T> {
     public static final int SUCCESS = 0;
     public static final int FAIL = 1;
+
 
     /**
      * 0：成功，1：失败
@@ -41,5 +40,4 @@ public class BaseResponse<T> {
     public void setData(T data) {
         this.data = data;
     }
-
 }

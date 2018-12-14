@@ -14,14 +14,14 @@
  * limitations under the License.
  */
 
-package com.samir.wanandroid.net.entity;
+package com.samir.wanandroid.entity.common;
 
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
 
-import static com.samir.wanandroid.net.entity.Status.ERROR;
-import static com.samir.wanandroid.net.entity.Status.LOADING;
-import static com.samir.wanandroid.net.entity.Status.SUCCESS;
+import static com.samir.wanandroid.entity.common.Status.ERROR;
+import static com.samir.wanandroid.entity.common.Status.LOADING;
+import static com.samir.wanandroid.entity.common.Status.SUCCESS;
 
 
 /**

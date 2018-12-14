@@ -1,36 +1,24 @@
 package com.samir.wanandroid.entity;
 
 /**
- * @author quchao
- * @date 2018/2/24
+ * 热门搜索关键字
  */
 
-public class ProjectClassifyData {
+public class HotKeyWord {
 
     /**
-     *   "children": [ ],
-     "courseId": 13,
-     "id": 294,
-     "name": "完整项目",
-     "order": 145000,
-     "parentChapterId": 293,
-     "visible": 0
+     *   "id": 6,
+     * "link": "",
+     * "name": "面试",
+     *"order": 1,
+     * "visible": 1
      */
 
-    private int courseId;
     private int id;
+    private String link;
     private String name;
     private int order;
-    private int parentChapterId;
     private int visible;
-
-    public int getCourseId() {
-        return courseId;
-    }
-
-    public void setCourseId(int courseId) {
-        this.courseId = courseId;
-    }
 
     public int getId() {
         return id;
@@ -38,6 +26,14 @@ public class ProjectClassifyData {
 
     public void setId(int id) {
         this.id = id;
+    }
+
+    public String getLink() {
+        return link;
+    }
+
+    public void setLink(String link) {
+        this.link = link;
     }
 
     public String getName() {
@@ -54,14 +50,6 @@ public class ProjectClassifyData {
 
     public void setOrder(int order) {
         this.order = order;
-    }
-
-    public int getParentChapterId() {
-        return parentChapterId;
-    }
-
-    public void setParentChapterId(int parentChapterId) {
-        this.parentChapterId = parentChapterId;
     }
 
     public int getVisible() {
