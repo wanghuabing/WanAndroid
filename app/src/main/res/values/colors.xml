@@ -4,6 +4,7 @@
     <color name="colorPrimaryDark">#00574B</color>
     <color name="colorAccent">#D81B60</color>
     <!-- 背景颜色 -->
+    <color name="bg_008577">#008577</color>
     <color name="bg_F8F8F8">#f8f8f8</color>
     <color name="bg_FBFBFB">#FBFBFB</color>
     <color name="bg_41CFBB">#41CFBB</color>
@@ -64,5 +65,7 @@
     <color name="stroke_D9D9D9">#D9D9D9</color>
 
 
+
+    <color name="vp_indicator">#41CFBB</color>
     <color name="buttonLabel">#d3d3d3</color>
 </resources>

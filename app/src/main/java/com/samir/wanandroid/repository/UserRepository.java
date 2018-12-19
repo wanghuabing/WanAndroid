@@ -14,12 +14,15 @@ import com.samir.wanandroid.net.WebService;
 import javax.inject.Inject;
 
 /**
- * UserRepository
+ *  UserRepository
+ * @author: Samir
+ * @version V1.0
+ * @date:2018/12/17 下午2:43
  */
 public class UserRepository {
     //
     private final WebService webService;
-
+    //
     private final UserDao userDao;
     //
     private final AppExecutors appExecutors;

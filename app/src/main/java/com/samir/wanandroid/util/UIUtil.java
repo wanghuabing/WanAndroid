@@ -30,16 +30,16 @@ public class UIUtil {
                resId = R.drawable.shape_head_red;
                break;
            case 2:
-               resId = R.drawable.shape_head_red;
+               resId = R.drawable.shape_head_blue;
                break;
            case 3:
-               resId =R.drawable.shape_head_red;
+               resId =R.drawable.shape_head_orange;
                break;
            case 4:
-               resId = R.drawable.shape_head_red;
+               resId = R.drawable.shape_head_green;
                break;
        }
-        return resId;
+       return resId;
     }
 
 }

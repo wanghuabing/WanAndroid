@@ -1,41 +1,34 @@
 package com.samir.wanandroid.entity;
 
+import android.arch.persistence.room.Entity;
+import android.arch.persistence.room.PrimaryKey;
 import android.os.Parcel;
 import android.os.Parcelable;
 
-import java.util.List;
-
 /**
- * 体系树
+ * @author: samir
+ * @date: 2018/12/18 下午4:57
  */
-
-public class ArticleTree implements Parcelable {
-
+@Entity(tableName = "wx_article_titles_table")
+public class WxArticleTitle implements Parcelable {
     /**
-     *  "children": [],
-     "courseId": 13,
-     "id": 150,
-     "name": "开发环境",
-     "order": 1,
-     "parentChapterId": 0,
-     "visible": 1
+     * children : []
+     * courseId : 13
+     * id : 408
+     * name : 鸿洋
+     * order : 190000
+     * parentChapterId : 407
+     * userControlSetTop : false
+     * visible : 1
      */
-
-    private List<ArticleTree> children;
-    private int courseId;
+    @PrimaryKey
     private int id;
+    private int courseId;
     private String name;
     private int order;
     private int parentChapterId;
+    private boolean userControlSetTop;
     private int visible;
-
-    public List<ArticleTree> getChildren() {
-        return children;
-    }
-
-    public void setChildren(List<ArticleTree> children) {
-        this.children = children;
-    }
 
     public int getCourseId() {
         return courseId;
@@ -77,6 +70,14 @@ public class ArticleTree implements Parcelable {
         this.parentChapterId = parentChapterId;
     }
 
+    public boolean isUserControlSetTop() {
+        return userControlSetTop;
+    }
+
+    public void setUserControlSetTop(boolean userControlSetTop) {
+        this.userControlSetTop = userControlSetTop;
+    }
+
     public int getVisible() {
         return visible;
     }
@@ -93,37 +94,37 @@ public class ArticleTree implements Parcelable {
 
     @Override
     public void writeToParcel(Parcel dest, int flags) {
-        dest.writeTypedList(this.children);
-        dest.writeInt(this.courseId);
         dest.writeInt(this.id);
+        dest.writeInt(this.courseId);
         dest.writeString(this.name);
         dest.writeInt(this.order);
         dest.writeInt(this.parentChapterId);
+        dest.writeByte(this.userControlSetTop ? (byte) 1 : (byte) 0);
         dest.writeInt(this.visible);
     }
 
-    public ArticleTree() {
+    public WxArticleTitle() {
     }
 
-    protected ArticleTree(Parcel in) {
-        this.children = in.createTypedArrayList(ArticleTree.CREATOR);
-        this.courseId = in.readInt();
+    protected WxArticleTitle(Parcel in) {
         this.id = in.readInt();
+        this.courseId = in.readInt();
         this.name = in.readString();
         this.order = in.readInt();
         this.parentChapterId = in.readInt();
+        this.userControlSetTop = in.readByte() != 0;
         this.visible = in.readInt();
     }
 
-    public static final Creator<ArticleTree> CREATOR = new Creator<ArticleTree>() {
+    public static final Creator<WxArticleTitle> CREATOR = new Creator<WxArticleTitle>() {
         @Override
-        public ArticleTree createFromParcel(Parcel source) {
-            return new ArticleTree(source);
+        public WxArticleTitle createFromParcel(Parcel source) {
+            return new WxArticleTitle(source);
         }
 
         @Override
-        public ArticleTree[] newArray(int size) {
-            return new ArticleTree[size];
+        public WxArticleTitle[] newArray(int size) {
+            return new WxArticleTitle[size];
         }
     };
 }

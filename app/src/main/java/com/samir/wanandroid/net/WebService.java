@@ -3,6 +3,7 @@ package com.samir.wanandroid.net;
 import android.arch.lifecycle.LiveData;
 
 import com.samir.wanandroid.entity.Article;
+import com.samir.wanandroid.entity.WxArticleTitle;
 import com.samir.wanandroid.entity.ProjectType;
 import com.samir.wanandroid.entity.common.ApiResponse;
 import com.samir.wanandroid.entity.common.DataHeader;
@@ -12,7 +13,7 @@ import com.samir.wanandroid.entity.AdData;
 import com.samir.wanandroid.entity.User;
 import com.samir.wanandroid.entity.HotKeyWord;
 import com.samir.wanandroid.entity.Website;
-import com.samir.wanandroid.entity.TitleArticleList;
+import com.samir.wanandroid.entity.WxArticleList;
 
 import java.util.List;
 
@@ -34,13 +35,35 @@ public interface WebService {
     LiveData<ApiResponse<User>> getUser(@Path("login") String login);
 
     /**
-     * 获取feed文章列表
+     * 获取首页文章列表
      *
-     * @param num 页数
-     * @return feed文章列表数据
+     * @param page 页数 pageNum = page + 1
+     * @return 文章列表数据
      */
-    @GET("article/list/{num}/json")
-    LiveData<ApiResponse<DataHeader<ListDataHeader<Article>>>> loadArticles(@Path("num") int num);
+    @GET("article/list/{page}/json")
+    LiveData<ApiResponse<DataHeader<ListDataHeader<Article>>>> loadArticles(@Path("page") int page);
+
+
+
+
+    /**
+     * 获取公众号列表
+     * @return 微信公账号列表
+     */
+    @GET("wxarticle/chapters/json ")
+    LiveData<ApiResponse<DataHeader<List<WxArticleTitle>>>> loadWxArticleTitles();
+
+
+
+    /**
+     * 获取公众号历史文章列表
+     *
+     * @param titleId 页数
+     * @return 文章列表数据
+     */
+    @GET("wxarticle/list/{id}/1/json ")
+    LiveData<ApiResponse<DataHeader<ListDataHeader<Article>>>> loadWxArticles(@Path("id")  int titleId);
+
 
     /**
      * 搜索
@@ -108,7 +131,7 @@ public interface WebService {
      * @return 导航数据
      */
     @GET("navi/json")
-    LiveData<DataHeader<List<TitleArticleList>>> getNavigationListData();
+    LiveData<DataHeader<List<WxArticleList>>> getNavigationListData();
 
     /**
      * 项目分类

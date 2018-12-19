@@ -7,35 +7,31 @@ import android.arch.persistence.room.Insert;
 import android.arch.persistence.room.OnConflictStrategy;
 import android.arch.persistence.room.Query;
 
-import com.samir.wanandroid.entity.Article;
+import com.samir.wanandroid.entity.WxArticleTitle;
 
 import java.util.List;
 
 /**
- * @Description:
+ * @author: samir
+ * @date: 2018/12/18 下午5:03
  */
 @Dao
-public interface ArticleDao {
+public interface WxArticleTitleDao {
+    @Insert(onConflict = OnConflictStrategy.REPLACE)
+    void insertTitle(WxArticleTitle title);
+
 
     @Insert(onConflict = OnConflictStrategy.REPLACE)
-    void insertArticle(Article article);
-
-
-    @Insert(onConflict = OnConflictStrategy.REPLACE)
-    void insertArticles(List<Article> articles);
+    void insertTitles(List<WxArticleTitle> titles);
 
     @Delete
-    void deleteArticle(Article user);
+    void deleteArticle(WxArticleTitle word);
 
 
-    @Query("SELECT * FROM ARTICLE_TABLE")
-    LiveData<List<Article>>  loadArticles();
+    @Query("SELECT * FROM WX_ARTICLE_TITLES_TABLE")
+    LiveData<List<WxArticleTitle>> loadTitles();
 
-    @Query("SELECT * FROM ARTICLE_TABLE WHERE author = :author")
-    LiveData<List<Article>>  loadArticles(String author);
 
-    @Query("DELETE FROM ARTICLE_TABLE")
+    @Query("DELETE FROM WX_ARTICLE_TITLES_TABLE")
     void deleteAll();
-
-
 }

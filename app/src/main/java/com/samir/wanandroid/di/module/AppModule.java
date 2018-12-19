@@ -22,7 +22,6 @@ import android.arch.persistence.room.Room;
 import com.samir.wanandroid.db.WanDb;
 import com.samir.wanandroid.db.dao.ArticleDao;
 import com.samir.wanandroid.db.dao.UserDao;
-import com.samir.wanandroid.db.dao.WordDao;
 
 import javax.inject.Singleton;
 
@@ -44,11 +43,6 @@ public class AppModule {
     @Singleton @Provides
     ArticleDao provideArticleDao(WanDb db) {
         return db.articleDao();
-    }
-
-    @Singleton @Provides
-    WordDao provideWordDao(WanDb db) {
-        return db.wordDao();
     }
 
 

@@ -33,7 +33,7 @@ buildscript {
     ext.bigImageLibVersion = '1.4.6'
     ext.leakcanaryVersion = '1.6.2'
     ext.timerVersion = '4.7.1'
-
+    ext.loggerVersion = '2.2.0'
     //Test
     ext.espressoVersion = '3.0.2'
     ext.runnerVersion = '1.0.2'

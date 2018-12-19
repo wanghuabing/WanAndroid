@@ -13,8 +13,12 @@ import javax.inject.Inject;
 import javax.inject.Singleton;
 
 /**
- * @Description:
+ *  WordRepository
+ * @author: Samir
+ * @version 
+ * @date:2018/12/14 下午4:04
  */
+
 @Singleton
 public class WordRepository {
 

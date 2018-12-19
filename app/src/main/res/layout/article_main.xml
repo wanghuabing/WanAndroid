@@ -2,46 +2,18 @@
 <layout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools">
-
-
-    <RelativeLayout
+    <android.support.v4.view.ViewPager
+        android:id="@+id/pager"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        tools:context=".ui.article.ArticleFragment">
-
-        <LinearLayout
+        android:layout_height="match_parent">
+        <android.support.design.widget.TabLayout
+            android:id="@+id/tabs"
+            app:tabBackground="@color/bg_008577"
+            app:tabIndicatorColor="@color/vp_indicator"
+            app:tabSelectedTextColor="@android:color/black"
+            app:tabTextColor="@color/txt_333333"
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:orientation="vertical"
-            tools:context=".ui.article.ArticleFragment">
-
-
-            <android.support.design.widget.TabLayout
-                android:id="@+id/tabs"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                app:layout_scrollFlags="scroll"
-                app:tabIndicatorColor="@android:color/holo_red_dark"
-                app:tabSelectedTextColor="@android:color/holo_red_dark"
-                app:tabTextColor="@android:color/black" />
-            <!-- TODO: Update blank fragment layout -->
-            <android.support.v7.widget.RecyclerView
-                android:id="@+id/recyclerview"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:background="@android:color/darker_gray"
-                tools:listitem="@layout/article_list_item" />
-
-        </LinearLayout>
-
-        <android.support.design.widget.FloatingActionButton
-            android:id="@+id/fab"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_alignParentRight="true"
-            android:layout_alignParentBottom="true"
-            android:layout_gravity="bottom|end"
-            android:layout_margin="@dimen/fab_margin"
-            android:src="@drawable/ic_add_black_24dp" />
-    </RelativeLayout>
+            android:layout_height="wrap_content">
+        </android.support.design.widget.TabLayout>
+    </android.support.v4.view.ViewPager>
 </layout>

@@ -38,6 +38,7 @@ dependencies {
     implementation project(path: ':framework')
 
     implementation "com.android.support:multidex:$multidexVersion"
+
     // Lifecycle components
     implementation "android.arch.lifecycle:extensions:$archLifecycleVersion"
     annotationProcessor "android.arch.lifecycle:compiler:$archLifecycleVersion"
@@ -63,7 +64,6 @@ dependencies {
     implementation "io.reactivex.rxjava2:rxandroid:$rxandroidVersion"
     implementation "io.reactivex.rxjava2:rxjava:$rxjavaVersion"
 
-
     //Big ImageView
     implementation "com.github.piasy:GlideImageLoader:$bigImageLibVersion"
 
@@ -80,6 +80,8 @@ dependencies {
     //Anim lib
 //    implementation "com.airbnb.android:lottie:$lottie_version"
 
+
+    implementation "com.orhanobut:logger:$loggerVersion"
 
     //leakcanary
     debugImplementation "com.squareup.leakcanary:leakcanary-android:$leakcanaryVersion"

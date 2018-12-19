@@ -8,11 +8,11 @@ import android.view.ViewGroup;
 import java.util.List;
 
 /**
- * @ClassName: ${type_name}
- * @Description:${todo}
- * @author: Hbwang
- * @date: ${date} ${time}
- */
+ * FragmentPagerAdapter
+ * @author: Samir
+ * @version V1.0
+ * @date:2018/12/19 上午10:05
+ */ 
 public class FragmentPagerAdapter extends FragmentStatePagerAdapter {
     private List<Fragment> fragmentList;
 

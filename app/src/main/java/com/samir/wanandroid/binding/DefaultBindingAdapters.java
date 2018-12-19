@@ -4,6 +4,9 @@ import android.content.Context;
 import android.databinding.BindingAdapter;
 import android.widget.ImageView;
 
+import com.bumptech.glide.Glide;
+import com.samir.framework.utils.SPUtils;
+
 /**
  * @Description:
  */
@@ -16,9 +19,11 @@ public  class DefaultBindingAdapters {
     }
 
     @BindingAdapter("imageUrl")
-    public  void bindImage(ImageView imageView, String url){
+    public void bindImage(ImageView imageView, String url) {
+        if(SPUtils.getBoolean(context,"NoImage",true)){
+            Glide.with(context).load(url).into(imageView);
+        }
 
     }
-
 
 }

@@ -60,6 +60,8 @@ public class MainActivity extends BaseActivity implements ViewPager.OnPageChange
         initViewPage();
     }
 
+
+
     private void initViewPage(){
         List<Fragment> fragmentList = new ArrayList<>();
         fragmentList.add(MainFragment.newInstance());

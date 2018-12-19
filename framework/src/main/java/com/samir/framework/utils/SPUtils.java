@@ -8,9 +8,9 @@ import java.lang.reflect.Method;
 import java.util.Map;
 
 /**
- * Created by Administrator on 2017/7/12 0012.
+ *  SPUtils
+ * @author: Samir
  */
-
 public class SPUtils {
     /**
      * 保存在手机里面的文件名
@@ -47,32 +47,38 @@ public class SPUtils {
         SharedPreferencesCompat.apply(editor);
     }
 
-    /**
-     * 得到保存数据的方法，我们根据默认值得到保存的数据的具体类型，然后调用相对于的方法获取值
-     *
-     * @param context
-     * @param key
-     * @param defaultObject
-     * @return
-     */
-    public static Object get(Context context, String key, Object defaultObject) {
+    public static String getString(Context context, String key, String defaultValue) {
         SharedPreferences sp = context.getSharedPreferences(FILE_NAME,
                 Context.MODE_PRIVATE);
-
-        if (defaultObject instanceof String) {
-            return sp.getString(key, (String) defaultObject);
-        } else if (defaultObject instanceof Integer) {
-            return sp.getInt(key, (Integer) defaultObject);
-        } else if (defaultObject instanceof Boolean) {
-            return sp.getBoolean(key, (Boolean) defaultObject);
-        } else if (defaultObject instanceof Float) {
-            return sp.getFloat(key, (Float) defaultObject);
-        } else if (defaultObject instanceof Long) {
-            return sp.getLong(key, (Long) defaultObject);
-        }
-
-        return null;
+        return sp.getString(key, defaultValue);
     }
+
+
+    public static int getInt(Context context, String key, int defaultValue) {
+        SharedPreferences sp = context.getSharedPreferences(FILE_NAME,
+                Context.MODE_PRIVATE);
+        return sp.getInt(key, defaultValue);
+    }
+
+
+    public static long getLong(Context context, String key, long defaultValue) {
+        SharedPreferences sp = context.getSharedPreferences(FILE_NAME,
+                Context.MODE_PRIVATE);
+        return sp.getLong(key, defaultValue);
+    }
+
+    public static float getFloat(Context context, String key, float defaultValue) {
+        SharedPreferences sp = context.getSharedPreferences(FILE_NAME,
+                Context.MODE_PRIVATE);
+        return sp.getFloat(key, defaultValue);
+    }
+
+    public static boolean getBoolean(Context context, String key, boolean defaultValue) {
+        SharedPreferences sp = context.getSharedPreferences(FILE_NAME,
+                Context.MODE_PRIVATE);
+        return sp.getBoolean(key, defaultValue);
+    }
+
 
     /**
      * 移除某个key值已经对应的值

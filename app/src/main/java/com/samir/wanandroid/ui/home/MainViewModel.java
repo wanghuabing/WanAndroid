@@ -5,6 +5,7 @@ import android.arch.lifecycle.ViewModel;
 
 import com.samir.wanandroid.entity.common.Resource;
 import com.samir.wanandroid.entity.Article;
+import com.samir.wanandroid.repository.ArticleRepository;
 
 import java.util.List;
 
@@ -21,8 +22,14 @@ public class MainViewModel extends ViewModel {
     }
 
 
-    public LiveData<Resource<List<Article>>> loadArticles() {
-        articles = articleRepository.loadArticles();
+    public LiveData<Resource<List<Article>>> loadArticles(int page) {
+        articles = articleRepository.loadArticles(page);
+
+        return articles;
+    }
+
+    public LiveData<Resource<List<Article>>> loadArticlesNew(int page) {
+        articles = articleRepository.loadArticlesNew(page);
 
         return articles;
     }

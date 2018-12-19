@@ -14,11 +14,10 @@
  * limitations under the License.
  */
 
-package com.samir.wanandroid.util;
+package com.samir.wanandroid.net;
 
 
 import android.arch.lifecycle.LiveData;
-import android.util.Log;
 
 import com.samir.wanandroid.entity.common.ApiResponse;
 
@@ -56,13 +55,11 @@ public class LiveDataCallAdapter<R> implements CallAdapter<R, LiveData<ApiRespon
                     call.enqueue(new Callback<R>() {
                         @Override
                         public void onResponse(Call<R> call, Response<R> response) {
-                            Log.e("TAG", "onResponse: " + response.body().toString());
                             postValue(new ApiResponse<>(response));
                         }
 
                         @Override
                         public void onFailure(Call<R> call, Throwable throwable) {
-                            Log.e("TAG", "onFailure: " + throwable.getMessage());
                             postValue(new ApiResponse<R>(throwable));
                         }
                     });

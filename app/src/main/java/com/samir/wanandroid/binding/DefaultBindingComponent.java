@@ -21,6 +21,4 @@ public class DefaultBindingComponent implements DataBindingComponent {
 
 
 
-
-
 }

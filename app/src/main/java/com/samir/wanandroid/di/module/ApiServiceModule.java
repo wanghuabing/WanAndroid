@@ -2,7 +2,7 @@ package com.samir.wanandroid.di.module;
 
 
 import com.samir.wanandroid.net.WebService;
-import com.samir.wanandroid.util.LiveDataCallAdapterFactory;
+import com.samir.wanandroid.net.LiveDataCallAdapterFactory;
 
 import javax.inject.Singleton;
 

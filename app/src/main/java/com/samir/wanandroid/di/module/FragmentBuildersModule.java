@@ -17,6 +17,7 @@
 package com.samir.wanandroid.di.module;
 
 import com.samir.wanandroid.ui.article.ArticleFragment;
+import com.samir.wanandroid.ui.article.ArticlePageFragment;
 import com.samir.wanandroid.ui.home.MainFragment;
 import com.samir.wanandroid.ui.me.MyFragment;
 import com.samir.wanandroid.ui.project.ProjectFragment;
@@ -31,6 +32,10 @@ public abstract class FragmentBuildersModule {
 
     @ContributesAndroidInjector
     abstract ArticleFragment contributeArticleFragment();
+
+    @ContributesAndroidInjector
+    abstract ArticlePageFragment contributeArticlePageFragmentFragment();
+
 
     @ContributesAndroidInjector
     abstract ProjectFragment contributeProjectFragment();

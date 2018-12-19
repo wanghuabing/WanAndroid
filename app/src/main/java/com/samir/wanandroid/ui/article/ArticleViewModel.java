@@ -3,8 +3,10 @@ package com.samir.wanandroid.ui.article;
 import android.arch.lifecycle.LiveData;
 import android.arch.lifecycle.ViewModel;
 
-import com.samir.wanandroid.entity.Word;
-import com.samir.wanandroid.repository.WordRepository;
+import com.samir.wanandroid.entity.Article;
+import com.samir.wanandroid.entity.WxArticleTitle;
+import com.samir.wanandroid.entity.common.Resource;
+import com.samir.wanandroid.repository.ArticleRepository;
 
 import java.util.List;
 
@@ -14,21 +16,32 @@ import javax.inject.Inject;
  * @Description:
  */
 public class ArticleViewModel extends ViewModel {
-    private WordRepository mWordRepository;
 
-    private LiveData<List<Word>> mAllWords;
 
+    private final ArticleRepository articleRepository;
 
     @Inject
-    public ArticleViewModel(WordRepository mWordRepository) {
+    public ArticleViewModel(ArticleRepository mWordRepository) {
         super();
-        this.mWordRepository = mWordRepository;
-        mAllWords = mWordRepository.getAllWords();
+        this.articleRepository = mWordRepository;
+
+
     }
 
 
-    public LiveData<List<Word>> getAllWords(){return mAllWords;}
+    public LiveData<Resource<List<WxArticleTitle>>> loadArticleTitles() {
+
+        return  articleRepository.loadTitles();
+    }
 
 
-    public void insert(Word word){ mWordRepository.insert(word);}
+
+    public LiveData<Resource<List<Article>>> loadWxArticles(String author,int titleId) {
+
+        return  articleRepository.loadWxArticles(author,titleId);
+    }
+
+    public void retry() {
+
+    }
 }

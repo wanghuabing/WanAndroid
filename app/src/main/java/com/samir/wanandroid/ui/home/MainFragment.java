@@ -1,96 +1,102 @@
 package com.samir.wanandroid.ui.home;
 
 import android.arch.lifecycle.ViewModelProvider;
-import android.arch.lifecycle.ViewModelProviders;
 import android.os.Bundle;
+import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
 import android.support.v7.widget.LinearLayoutManager;
-import android.util.Log;
 import android.view.View;
 
 import com.samir.framework.base.BaseFragment;
 import com.samir.wanandroid.R;
-import com.samir.wanandroid.databinding.MainFragmentBinding;
+import com.samir.wanandroid.databinding.RvLoadingBinding;
 import com.samir.wanandroid.di.Injectable;
-import com.samir.wanandroid.net.RetryCallback;
 import com.samir.wanandroid.ui.home.adapter.ArticleAdapter;
 
 import java.util.Collections;
 
 import javax.inject.Inject;
 
-public class MainFragment extends BaseFragment<MainFragmentBinding> implements Injectable,
-        RetryCallback {
-
-    private MainViewModel mViewModel;
+public class MainFragment extends BaseFragment<MainViewModel,RvLoadingBinding> implements Injectable {
 
     @Inject
     ViewModelProvider.Factory viewModelFactory;
 
     private ArticleAdapter adapter;
+
+    private int curPage = 0;
+
     public static MainFragment newInstance() {
         return new MainFragment();
     }
 
+
     @Override
     public int loadLayout() {
-        return R.layout.main_fragment;
+        return R.layout.rv_loading;
     }
 
     @Override
-    public void initViews(View view) {
-        mBinding.refreshLayout.setOnRefreshListener(refreshlayout -> {
+    public Class<MainViewModel> loadViewModel() {
+        return MainViewModel.class;
+    }
 
-        });
 
-        mBinding.refreshLayout.setOnLoadmoreListener(refreshlayout -> {
 
-        });
-
+    @Override
+    public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
+        super.onViewCreated(view, savedInstanceState);
 
         LinearLayoutManager linearLayoutManager = new LinearLayoutManager(getActivity());
         linearLayoutManager.setOrientation(LinearLayoutManager.VERTICAL);
-        mBinding.rvNews.setLayoutManager(new LinearLayoutManager(getActivity()));
-
+        mBinding.rvList.setLayoutManager(new LinearLayoutManager(getActivity()));
 
         adapter = new ArticleAdapter(getActivity());
-        mBinding.rvNews.setAdapter(adapter);
-
-
+        mBinding.rvList.setAdapter(adapter);
     }
+
 
     @Override
     public void bindEvents() {
+        mBinding.refreshLayout.setOnRefreshListener(layout -> {
+            curPage = 0;
+            loadArticles();
+        });
 
+        mBinding.refreshLayout.setOnLoadmoreListener(layout -> {
+            curPage++;
+            loadArticles();
+        });
+
+
+        mBinding.setRetryCallback(() -> {
+            loadArticles();
+        });
     }
 
 
     @Override
-    public void onActivityCreated(@Nullable Bundle savedInstanceState) {
-        super.onActivityCreated(savedInstanceState);
-        mViewModel = ViewModelProviders.of(getActivity(),viewModelFactory).get(MainViewModel.class);
-        // TODO: Use the ViewModel
+    public void loadData() {
         loadArticles();
     }
 
 
     private void loadArticles() {
-        mViewModel.loadArticles().observe(this, listResource -> {
-            // we don't need any null checks here for the adapter since LiveData guarantees that
-            // it won't call us if fragment is stopped or not started.
-            Log.e("MainFragment", "loadArticles: " +listResource.data );
-            if (listResource != null && listResource.data != null) {
+        mViewModel.loadArticlesNew(curPage).observe(this, listResource -> {
+            if (curPage == 0) {
+                mBinding.refreshLayout.finishRefresh();
+            } else {
+                mBinding.refreshLayout.finishLoadmore();
+            }
+            mBinding.setLoadResource(listResource);
+            if (listResource.data != null && !listResource.data.isEmpty()) {
                 adapter.replace(listResource.data);
             } else {
-                //noinspection ConstantConditions
                 adapter.replace(Collections.emptyList());
             }
         });
     }
 
 
-    @Override
-    public void retry() {
 
-    }
 }

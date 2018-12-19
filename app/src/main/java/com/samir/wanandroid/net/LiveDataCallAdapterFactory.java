@@ -14,10 +14,9 @@
  * limitations under the License.
  */
 
-package com.samir.wanandroid.util;
+package com.samir.wanandroid.net;
 
 import android.arch.lifecycle.LiveData;
-import android.util.Log;
 
 import com.samir.wanandroid.entity.common.ApiResponse;
 
@@ -45,7 +44,6 @@ public class LiveDataCallAdapterFactory extends CallAdapter.Factory {
         }
         Type bodyType = getParameterUpperBound(0, (ParameterizedType) observableType);
 
-        Log.e("TAG", "get: " + bodyType);
         return new LiveDataCallAdapter<>(bodyType);
     }
 }

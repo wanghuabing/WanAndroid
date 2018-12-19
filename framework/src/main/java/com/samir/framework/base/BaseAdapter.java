@@ -43,12 +43,6 @@ public abstract class BaseAdapter<T, V extends ViewDataBinding>
     private int dataVersion = 0;
 
 
-    public static final int HEADER_VIEW = 0x00011;
-    public static final int LOADING_VIEW = 0x00021;
-    public static final int FOOTER_VIEW = 0x00031;
-    public static final int EMPTY_VIEW = 0x00041;
-
-
     @Override
     public final BaseViewHolder<V> onCreateViewHolder(ViewGroup parent, int viewType) {
         V binding = createBinding(parent,viewType);
